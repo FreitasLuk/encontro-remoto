@@ -1,1 +1,86 @@
 - este arquivo e texto representam os dados e informações presentes no arquivo data
+
+repositório de códigos SQL
+
+CRIAR BANCO DE DADOS:
+CREATE DATABASE Nome;
+
+CRIAR ENTIDADE/TABELA:
+CREATE TABLE Alunos(
+Cpf char(11)
+);
+DELETAR BANCO DE DADOS:
+DROP DATABASE Nome;
+
+CRIAR BANCO DE DADOS COM PADRAO DE CARACTERES:
+CREATE DATABASE Cadastro
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+
+CRIAR TABELA BEM ESTRUTURADA:
+CREATE TABLE Pessoas(
+    idPessoas integer not null AUTO_INCREMENT,
+    nomePessoas varchar(50) not null,
+    alturaPessoas decimal(3,2),
+    pesoPessoas decimal (5,2),
+    nascimentoPessoas date,
+    nacionalidadePessoas varchar(30) default 'Brasil',
+    sexoPessoas enum('M','F'),
+    PRIMARY KEY(idPessoas)
+)DEFAULT CHARSET = utf8;
+
+ANALISAR TABELAS:
+DESCRIBE Pessoas
+
+INSERIR DADOS NA TABELA:
+INSERT INTO pessoas 
+VALUES
+('1', 'João', '1.90', '89.0', '1980-12-03', 'Brasil', 'M');
+
+ou 
+
+INSERT INTO pessoas 
+VALUES
+(DEFAULT, 'João', '1.90', '89.0', '1980-12-03', 'Brasil', 'M');
+
+ou
+
+INSERT INTO pessoas
+(idPessoas, nomePessoas, alturaPessoas, pesoPessoas, nascimentoPessoas, nacionalidadePessoas, sexoPessoas)
+VAlUES
+(DEFAULT, 'Maria', '1.60', '60.0', '1985-11-07', 'Canadense', 'F'),
+(DEFAULT, 'Joãozinho', '1.30', '35.0', '2010-09-25', DEFAULT, 'M'),
+(DEFAULT, 'Mariazinha', '1.00', '25.0', '2015-12-09', 'Brasil', 'M');
+
+VER DADOS DA TABELA:
+SELECT * FROM pessoas
+
+ADICIONAR COLUNA NA TABELA:
+ALTER TABLE pessoas ADD COLUMN idPessoas integer not null FIRST
+
+ALTERAR A ESTRUTURA DA COLUNA:
+ALTER TABLE pessoas MODIFY COLUMN idade varchar(30) not null DEFAULT ''
+
+MODIFICAR A ESTRUTURA E O NOME DA COLUNA:
+ALTER TABLE pessoas CHANGE COLUMN idade nascimento date not nulll;
+
+DELETAR UMA COLUNA DA TABELA:
+ALTER TABLE pessoas DROP COLUMN nacionalidade;
+
+COMANDO PARA RENOMEAR UMA TABELA:
+ALTER TABLE plagio RENAME TO pessoaFisica
+
+DELETAR UMA TABELA:
+DROP TABLE IF EXISTS pessoaFisica 
+
+DELETAR UM DADO DA COLUNA:
+DELETE FROM pessoas WHERE idPessoas = 2
+
+COMANDO PARA ALTERAR O DADO DA TUPLA:
+UPDATE cursos set nomeCursos = 'Informatica' where idCursos = '4';
+
+ADICIONAR UMA CHAVE ESTRANGEIRA (a coluna precisa existir e não ser nula)
+ALTER TABLE pessoas ADD FOREIGN KEY (idCursos) REFERENCES cursos(idCursos)
+
+COMANDO PARA APAGAR TODOS OS DADOS DE UMA TABELA:
+TRUNCATE cursos;
