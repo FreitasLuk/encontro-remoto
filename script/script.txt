@@ -14,3 +14,8 @@ github: https://github.com/FreitasLuk
 simulação de codigicação da ramificação de Pedro[]
 
 
+
+#ramificação João
+
+simulação da codificação de João[]
+
