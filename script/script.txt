@@ -1,3 +1,6 @@
 - este texto e arquivo representam a codigicação presente no arquivo script
 
 
+#ramificação João
+
+simulação da codificação de João[]
