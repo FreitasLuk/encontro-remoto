@@ -1,8 +1,16 @@
 - este texto e arquivo representam a codigicação presente no arquivo script
 
+
 # branch alterações Lucas
 
 github: https://github.com/FreitasLuk
 
 "Existe apenas um único erro inato, que é o de acreditarmos que vivemos para sermos felizes." (Schopenhauer)
+
+
+
+#branch Pedro
+
+simulação de codigicação da ramificação de Pedro[]
+
 
